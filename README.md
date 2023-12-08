@@ -47,3 +47,4 @@ SyncHub mira a fornire agli utenti uno strumento intuitivo e completo per la ges
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 # SyncHub
+# SyncHub
