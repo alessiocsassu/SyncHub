@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('email');
             $table->string('token');
+            $table->string('password');
             // Altri campi per l'autenticazione dell'utente, se necessario
             $table->timestamps();
         });
