@@ -3,6 +3,8 @@
 ## Descrizione
 SyncHub è un'applicazione web-based, accessibile da desktop e smartphone, che permette agli utenti di creare gruppi (Hub) e di gestire le attività all'interno di essi. Gli utenti possono creare task, assegnarli ad altri membri del gruppo, commentare e discutere su di essi, e visualizzare le attività in sospeso, in corso e completate. SyncHub permette inoltre di impostare livelli di accesso e privacy per ogni Hub, e di integrare il calendario per visualizzare le scadenze dei task.
 
+Per iniziare lo sviluppo, guarda [qui](https://github.com/alessiocsassu/SyncHub/blob/master/docs/setupdev.md)!
+
 ## Funzionalità
 
 ### Gestione degli "Hub" (Gruppi)

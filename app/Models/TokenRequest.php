@@ -5,28 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invitation extends Model
+class TokenRequest extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'email',
-        'token',
         'hub_id',
-        'invited_by',
+        'token',
+        'created_by',
         // Altri campi se necessario
     ];
 
-    // Relazione con l'hub a cui fa riferimento l'invito
+    // Relazione con l'hub a cui fa riferimento la richiesta di token
     public function hub()
     {
         return $this->belongsTo(Hub::class);
     }
 
-    // Relazione con l'utente che ha inviato l'invito
-    public function inviter()
+    // Relazione con l'utente che ha creato la richiesta di token
+    public function creator()
     {
-        return $this->belongsTo(User::class, 'invited_by');
+        return $this->belongsTo(User::class, 'created_by');
     }
 
     // Altri metodi, relazioni o accessori se necessario

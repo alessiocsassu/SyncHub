@@ -12,26 +12,34 @@ class User extends Model
     protected $fillable = [
         'username',
         'email',
+        'token',
         'password',
-        // Altri campi se necessario
+        // Aggiungi altri campi se necessario
     ];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-        // Altri campi nascosti se necessario
-    ];
-
-    // Relazione con i task assegnati all'utente
-    public function assignedTasks()
+    // Relazione con gli hub creati dall'utente
+    public function createdHubs()
     {
-        return $this->hasMany(Task::class, 'assigned_to');
+        return $this->hasMany(Hub::class, 'created_by');
     }
 
-    // Relazione con i task creati dall'utente
-    public function createdTasks()
+    // Relazione con gli hub a cui l'utente appartiene
+    public function memberOfHubs()
     {
-        return $this->hasMany(Task::class, 'created_by');
+        return $this->belongsToMany(Hub::class, 'hub_members', 'user_id', 'hub_id')
+            ->withPivot('role'); // Se vuoi includere il ruolo dell'utente nell'hub
+    }
+
+    // Relazione con le richieste di token create dall'utente
+    public function tokenRequests()
+    {
+        return $this->hasMany(TokenRequest::class, 'created_by');
+    }
+
+    // Relazione con i token accettati dall'utente
+    public function acceptedTokens()
+    {
+        return $this->hasMany(AcceptedToken::class, 'user_id');
     }
 
     // Altri metodi, relazioni o accessori se necessario
