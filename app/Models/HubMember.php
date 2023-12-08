@@ -5,28 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Invitation extends Model
+class HubMember extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'email',
-        'token',
         'hub_id',
-        'invited_by',
+        'user_id',
+        'role',
         // Altri campi se necessario
     ];
 
-    // Relazione con l'hub a cui fa riferimento l'invito
+    // Relazione con l'hub a cui appartiene il membro
     public function hub()
     {
         return $this->belongsTo(Hub::class);
     }
 
-    // Relazione con l'utente che ha inviato l'invito
-    public function inviter()
+    // Relazione con l'utente che è membro dell'hub
+    public function user()
     {
-        return $this->belongsTo(User::class, 'invited_by');
+        return $this->belongsTo(User::class);
     }
 
     // Altri metodi, relazioni o accessori se necessario
