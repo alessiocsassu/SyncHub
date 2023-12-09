@@ -26,8 +26,16 @@
 - `docker compose up -d`
 - Verificare che tutti i container siano collegati
 
+### File hosts
+
+- Aggiornare il file hosts di sistema aggiungendo la url `synchub.local` all'indirizzo `127.0.0.1`
+- Verificare testando la connessione a [http://synchub.local](http://synchub.local), apparirà la pagina del progetto
+
+
 ### Database
 
 - Effettuare e verificare la connessione al DB MySQL con i dati inseriti nel file .env
 - Generare lo schema lanciando il comando `php artisan migrate`
+
+
 
