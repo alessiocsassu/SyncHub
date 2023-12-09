@@ -29,7 +29,9 @@
 <body>
 <div class="container mt-5">
     <div class="jumbotron">
-        <h1 class="display-4">SyncHub</h1>
+        <h1 class="display-4">
+            <img src="{{ asset('/src/img/synchub_logo_title.png') }}" width="200" alt="SyncHub">
+        </h1>
         <p class="lead">Index Page</p>
         <hr class="my-4">
         <p>L'app è in fase di sviluppo!</p>
